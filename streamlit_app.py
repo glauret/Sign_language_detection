@@ -277,22 +277,3 @@ if menu_id == "Webcam":
                 async_processing=True,
             )
 
-    # Final word
-    # with col1:
-    #     final_word = ""
-
-    #     if webrtc_ctx.state.playing:
-    #         labels_placeholder = st.empty()
-    #         while True:
-    #             if webrtc_ctx.video_processor:
-    #                 try:
-    #                     result = webrtc_ctx.video_processor.result_queue_word.get(timeout=1.0)
-    #                     final_word = ""
-    #                     for value in result:
-    #                         final_word = final_word + value
-    #                     labels_placeholder.title(final_word)
-    #                     labels_placeholder.markdown(f"<h1 style='text-align: center; color: red;'>{final_word}</h1>", unsafe_allow_html=True)
-    #                 except queue.Empty:
-    #                     result = final_word
-    #             else:
-    #                 break
