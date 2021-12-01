@@ -13,4 +13,4 @@ numpy
 #streamlit and tensorflow
 streamlit-webrtc==0.31.3
 streamlit==1.2.0
-tensorflow==2.5.2
+tensorflow==2.7.0

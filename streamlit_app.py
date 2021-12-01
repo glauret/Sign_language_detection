@@ -118,15 +118,11 @@ if not 'model.h5' in os.listdir(HERE):
     print("model loaded")
     txt.success("Téléchargement terminé")
 
-@st.cache(allow_output_mutation=True)
-def load_mo():
-    model = load_model('model.h5')
-    return model
 
 #@st.cache(allow_output_mutation=True)
 @st.experimental_singleton
 def load_mo():
-    model = load_model('models/model_resnet50_V2_8830.h5')
+    model = load_model('model.h5')
     return model
 
 # Your class where you put the intelligence
@@ -177,7 +173,8 @@ class SignPredictor(VideoProcessorBase):
             img_hand_resize = tf.stack([channels[2], channels[1], channels[0]],
                                        axis=-1)
 
-            prediction = self.model.predict(img_hand_resize)
+            prediction = self.model.predict(img_hand_resize)[0]
+
             probabs = round(prediction[np.argmax(prediction)], 2)
             pred = np.argmax(prediction)
 
