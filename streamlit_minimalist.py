@@ -117,7 +117,7 @@ class SignPredictor(VideoProcessorBase):
             self.counter +=1
             if self.counter % 1 == 0:
 
-                if probabs > 0.8:
+                if probabs > 0.9:
                     self.l.append(dict_letter[pred])
 
                 # COLORING BOX
@@ -138,7 +138,7 @@ class SignPredictor(VideoProcessorBase):
                                     0.6, (0,0,0), 2)
 
                 # WORD CREATION
-                if len(self.l) == 15:
+                if len(self.l) == 20:
                     self.word.append(max(set(self.l), key=self.l.count))
                     self.l = []
                 final_word = ""

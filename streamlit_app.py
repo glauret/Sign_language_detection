@@ -140,7 +140,6 @@ if menu_id == "Webcam":
         {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
     )
 
-    getting cwd
     HERE = Path(__file__).parent
     print(os.listdir(HERE))
     if not 'model.h5' in os.listdir(HERE):
@@ -276,4 +275,3 @@ if menu_id == "Webcam":
                 media_stream_constraints={"video": True, "audio": False},
                 async_processing=True,
             )
-
