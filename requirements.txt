@@ -14,4 +14,4 @@ numpy
 streamlit-webrtc==0.31.3
 streamlit==1.2.0
 tensorflow==2.5.2
-# hydralit_components
+hydralit_components
