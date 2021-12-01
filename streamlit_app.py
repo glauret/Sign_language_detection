@@ -2,13 +2,11 @@
 
 import cv2
 from handdetector import HandDetector
-import av
 import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import numpy as np
-import queue
-import random
+
 
 # Import component
 from streamlit_webrtc import (
@@ -17,6 +15,14 @@ from streamlit_webrtc import (
     WebRtcMode,
     webrtc_streamer,
 )
+
+#builtin python
+import av
+import queue
+import urllib
+import urllib.request
+import os
+from pathlib import Path
 
 #add_fronta
 app_formal_name = "🧙 Sign detection 🐍"
@@ -97,6 +103,26 @@ RTC_CONFIGURATION = RTCConfiguration(
     {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
 )
 
+#getting cwd
+HERE = Path(__file__).parent
+print(os.listdir(HERE))
+if not 'model.h5' in os.listdir(HERE):
+    txt = st.warning("Téléchargement du modèle")
+    print("loading model")
+    url = 'https://www.dropbox.com/s/sffb5ew98us9gxa/model_resnet50_V2_8830.h5?dl=1'
+    u = urllib.request.urlopen(url)
+    data = u.read()
+    u.close()
+    with open('model.h5', 'wb') as f:
+        f.write(data)
+    print("model loaded")
+    txt.success("Téléchargement terminé")
+
+@st.cache(allow_output_mutation=True)
+def load_mo():
+    model = load_model('model.h5')
+    return model
+
 #@st.cache(allow_output_mutation=True)
 @st.experimental_singleton
 def load_mo():
@@ -152,7 +178,7 @@ class SignPredictor(VideoProcessorBase):
                                        axis=-1)
 
             prediction = self.model.predict(img_hand_resize)
-            probabs = round(max(self.model.predict_proba(img_hand_resize)[0]),2)
+            probabs = round(prediction[np.argmax(prediction)], 2)
             pred = np.argmax(prediction)
 
             self.counter +=1

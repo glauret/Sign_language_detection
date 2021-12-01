@@ -1,40 +1,16 @@
 # packaging
 pip>=9
-setuptools>=26
-twine
-wheel>=0.29
-
-# data science
-numpy
-pandas
-scikit-learn
-
-# tests/linter
-black
-coverage
-flake8
-pytest
-yapf
-
-# API
-gcsfs
-google-cloud-storage
-mlflow
-s3fs
 
 # utilities
-six>=1.14
-joblib
-memoized-property
-termcolor
+aiortc==1.2.1
+opencv-python-headless
+opencv-contrib-python-headless
 cvzone
-opencv-python
-mediapipe
-streamlit-webrtc
-streamlit
-PyDrive
-tensorflow
-pyyaml
-av
-queue
-emoji
+mediapipe==0.8.9
+
+numpy
+
+#streamlit and tensorflow
+streamlit-webrtc==0.31.3
+streamlit==1.2.0
+tensorflow==2.5.2
