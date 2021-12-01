@@ -227,17 +227,17 @@ with col2:
 # Final word
 final_word = ""
 
-if webrtc_ctx.state.playing:
-    labels_placeholder = st.empty()
-    while True:
-        if webrtc_ctx.video_processor:
-            try:
-                result = webrtc_ctx.video_processor.result_queue_word.get(timeout=1.0)
-                final_word = ""
-                for value in result:
-                    final_word = final_word + value
-                labels_placeholder.title(final_word)
-            except queue.Empty:
-                result = final_word
-        else:
-            break
+# if webrtc_ctx.state.playing:
+#     labels_placeholder = st.empty()
+#     while True:
+#         if webrtc_ctx.video_processor:
+#             try:
+#                 result = webrtc_ctx.video_processor.result_queue_word.get(timeout=1.0)
+#                 final_word = ""
+#                 for value in result:
+#                     final_word = final_word + value
+#                 labels_placeholder.title(final_word)
+#             except queue.Empty:
+#                 result = final_word
+#         else:
+#             break
