@@ -52,7 +52,7 @@ if not 'model.h5' in os.listdir(HERE):
     txt.success("Téléchargement terminé")
 
 #@st.cache(allow_output_mutation=True)
-@st.experimental_singleton
+# @st.experimental_singleton
 def load_mo():
     model = load_model('model.h5')
     return model
