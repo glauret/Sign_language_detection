@@ -78,9 +78,9 @@ if menu_id == "Teammates":
     img_follow = Image.open("./images/follow_us.JPG")
     col2.image(img_follow)
     col1.markdown( "[![this is an image link](https://cdn.iconscout.com/icon/free/png-256/github-2690381-2232884.png)](https://github.com/glauret)")
-    col1.markdown("<p style='text-align: center;'><b>Guillaume Lauret</p>", unsafe_allow_html=True)   
+    col1.markdown("<p style='text-align: center;'><b>Guillaume Lauret</p>", unsafe_allow_html=True)
     col3.markdown( "[![this is an image link](https://cdn.iconscout.com/icon/free/png-256/github-2690381-2232884.png)](https://github.com/selmalopez)")
-    col3.markdown("<p style='text-align: center;'><b>Selma Lopez</p>", unsafe_allow_html=True)  
+    col3.markdown("<p style='text-align: center;'><b>Selma Lopez</p>", unsafe_allow_html=True)
 
 ####### navbar menu Sign Learning ########
 if menu_id == "Sign learning":
@@ -140,25 +140,25 @@ if menu_id == "Webcam":
         {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
     )
 
-    # getting cwd
-    # HERE = Path(__file__).parent
-    # print(os.listdir(HERE))
-    # if not 'model.h5' in os.listdir(HERE):
-    #     txt = st.warning("Téléchargement du modèle")
-    #     print("loading model")
-    #     url = 'https://www.dropbox.com/s/sffb5ew98us9gxa/model_resnet50_V2_8830.h5?dl=1'
-    #     u = urllib.request.urlopen(url)
-    #     data = u.read()
-    #     u.close()
-    #     with open('model.h5', 'wb') as f:
-    #         f.write(data)
-    #     print("model loaded")
-    #     txt.success("Téléchargement terminé")
+    getting cwd
+    HERE = Path(__file__).parent
+    print(os.listdir(HERE))
+    if not 'model.h5' in os.listdir(HERE):
+        txt = st.warning("Téléchargement du modèle")
+        print("loading model")
+        url = 'https://www.dropbox.com/s/sffb5ew98us9gxa/model_resnet50_V2_8830.h5?dl=1'
+        u = urllib.request.urlopen(url)
+        data = u.read()
+        u.close()
+        with open('model.h5', 'wb') as f:
+            f.write(data)
+        print("model loaded")
+        txt.success("Téléchargement terminé")
 
     #@st.cache(allow_output_mutation=True)
     @st.experimental_singleton
     def load_mo():
-        model = load_model('models/model_resnet50_V2_8830.h5')
+        model = load_model('modelh5')
         return model
 
     # Your class where you put the intelligence
