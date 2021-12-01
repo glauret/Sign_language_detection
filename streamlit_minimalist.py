@@ -57,13 +57,15 @@ def load_mo():
     model = load_model('model.h5')
     return model
 
+model = load_mo()
+
     # Your class where you put the intelligence
 class SignPredictor(VideoProcessorBase):
 
     def __init__(self) -> None:
         # Hand detector
         self.hand_detector = HandDetector(detectionCon=0.8, maxHands=1)
-        self.model = load_mo()
+        self.model = model
         self.counter = 0
         self.l=[]
         self.word=[]
