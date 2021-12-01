@@ -51,13 +51,14 @@ if not 'model.h5' in os.listdir(HERE):
     print("model loaded")
     txt.success("Téléchargement terminé")
 
-#@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 # @st.experimental_singleton
 def load_mo():
     model = load_model('model.h5')
     return model
-
+print("load model")
 model = load_mo()
+print("model loaded")
 
     # Your class where you put the intelligence
 class SignPredictor(VideoProcessorBase):
