@@ -66,7 +66,7 @@ class SignPredictor(VideoProcessorBase):
     def __init__(self) -> None:
         # Hand detector
         self.hand_detector = HandDetector(detectionCon=0.8, maxHands=1)
-        self.model = model
+        self.model = load_mo()
         self.counter = 0
         self.l=[]
         self.word=[]
