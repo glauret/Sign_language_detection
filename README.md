@@ -1,4 +1,4 @@
-# How to Build a Neural Network to Translate Sign Language into English
+# Build a Neural Network to detect Sign Languages
 - Based on the American sign Language
 - Description: Sign Language Translator using computer vision
 - Dataset : homemade 7500 pictures of hands position
