@@ -1,6 +1,6 @@
 # Build a Neural Network to detect Sign Language
 - Based on the American Sign Language alphabet
-- Description: Sign Language Translator using computer vision and segmentation
+- Description: Sign Language Translator using computer vision and image segmentation
 - Dataset : more than 8000 pictures of hands position both homemade and from online dataset
 - Type of neural network: Convolutional Neural Network with transfer learning from Resnet50 V2
 
