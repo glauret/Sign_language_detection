@@ -1,4 +1,4 @@
-# Data analysis
+# How to Build a Neural Network to Translate Sign Language into English
 - Document here the project: sld
 - Description: Project Description
 - Data Source:
